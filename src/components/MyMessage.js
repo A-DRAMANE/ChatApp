@@ -1,5 +1,3 @@
-import React from 'react'
-
 const MyMessage = ({message}) => {
     if(message?.attachment?.length>0){
         return(

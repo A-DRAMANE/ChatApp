@@ -1,14 +1,13 @@
-import React from 'react'
-
 const TheirMessage = (lastMessage,message) => {
     const isFirstMessageByUser = !lastMessage || lastMessage.sender.username !== message.sender.username;
 
     return (
         <div className="message-row">
-            {<div
+            {isFirstMessageByUser && (
+                <div
                 className="message-avatar"
-                style={{backgroundImage:'url(${message?.sender?.avatar})'}}
-            />}
+                style={{backgroundImage:`url(${message?.sender?.avatar})`}}
+            />)}
 
             {message?.attachment?.length>0
                 ?(
