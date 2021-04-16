@@ -1,5 +1,4 @@
 import React from 'react'
-import { PeopleSettings } from 'react-chat-engine'
 import MessageForm from './MessageForm'
 import MyMessage from './MyMessage'
 import TheirMessage from './TheirMessage'
@@ -12,12 +11,12 @@ const ChatFeed = (props) => {
     const renderMessages = () => {
         const keys = Object.keys(messages)
         return keys.map((key,index) => {
-            const message = messages[key]
+            const message = messages[key ]
             const lastMessageKey = index === 0 ? null : key[index -1];
             const isMyMessage = userName === message.sender.username;
 
             return(
-                <div key={'msg_${index}'} style={{width:'100%'}}>
+                <div key={`msg_${index}`} style={{width:'100%'}}>
                     <div>
                         {
                             isMyMessage
@@ -25,7 +24,7 @@ const ChatFeed = (props) => {
                             :<TheirMessage message={message} lastMessage={messages[lastMessageKey]} />
                         }
                     </div>
-                    <div className="read-receipts" style={{marginRight:isMyMessage ? '18px' : '0px', marginLeft:isMyMessage ? '0px' : '68px'}}>
+                    <div className="read-receipts" style={{ marginRight: isMyMessage ? '18px' : '0px', marginLeft: isMyMessage ? '0px' : '68px'}}>
                         read receipts
                     </div>
                 </div>
@@ -39,7 +38,7 @@ const ChatFeed = (props) => {
         <div className="chat-feed">
             <div className="chat-title-container">
                 <div className="chat-title"> {chat.title} </div> 
-                    <div className="chat-submit">
+                    <div className="chat-subtitle">
                         {chat.people.map((person) => ` ${person.person.username} `)}
                     </div>
             </div>

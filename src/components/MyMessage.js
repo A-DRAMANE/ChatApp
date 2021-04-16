@@ -3,7 +3,7 @@ const MyMessage = ({message}) => {
         return(
             <img
                 src={message.attachment[0].fille}
-                alt="message attachment"
+                alt="message-attachment"
                 className="message-image"
                 style={{float:'right'}}
             />
@@ -11,7 +11,7 @@ const MyMessage = ({message}) => {
     }
     return (
         <div className="message" style={{float:'right', marginRight:"18px",color:"white",backgroundColor:"#3B2A50"}}>
-            {message.texte}
+            {message.text}
         </div>
     )
 }

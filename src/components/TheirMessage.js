@@ -9,17 +9,17 @@ const TheirMessage = (lastMessage,message) => {
                 style={{backgroundImage:`url(${message?.sender?.avatar})`}}
             />)}
 
-            {message?.attachment?.length>0
-                ?(
+            {message?.attachment?.length > 0
+                ? (
                     <img
                         src={message.attachment[0].fille}
                         alt="message attachment"
                         className="message-image"
-                        style={{marginLeft:isFirstMessageByUser ? "4px" : "48px"}}
+                        style={{marginLeft: isFirstMessageByUser ? "4px" : "48px"}}
                     />
                 ) : (
-                    <div className="message" style={{float:"left", color:"white",backgroundColor:"#CABCDC",marginLeft:isFirstMessageByUser ? "4px" : "48px"}}>
-                        {message.texte}
+                    <div className="message" style={{float:"left",backgroundColor:"#CABCDC",marginLeft:isFirstMessageByUser ? "4px" : "48px"}}>
+                        {message.text}
                     </div>
                 )
         }
