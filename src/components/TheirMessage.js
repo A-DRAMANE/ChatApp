@@ -1,3 +1,4 @@
+import React from 'react'
 const TheirMessage = (lastMessage,message) => {
     const isFirstMessageByUser = !lastMessage || lastMessage.sender.username !== message.sender.username;
 
@@ -5,14 +6,14 @@ const TheirMessage = (lastMessage,message) => {
         <div className="message-row">
             {isFirstMessageByUser && (
                 <div
-                className="message-avatar"
-                style={{backgroundImage:`url(${message?.sender?.avatar})`}}
+                    className="message-avatar"
+                    style={{backgroundImage:`url(${message?.sender?.avatar})`}}
             />)}
 
-            {message?.attachment?.length > 0
+            {message?.attachments?.length > 0
                 ? (
                     <img
-                        src={message.attachment[0].fille}
+                        src={message.attachments[0].file}
                         alt="message attachment"
                         className="message-image"
                         style={{marginLeft: isFirstMessageByUser ? "4px" : "48px"}}
